@@ -299,23 +299,121 @@ ul {
 PROJECT CSS
 ========
 */
+body {
+  background-color: f0f0f0;
+  transition: var(--transition);
+}
+
+main {
+  min-height: 100vh;
+  /* background-color: var(--grey-50); */
+  width: 80%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
 
 /* 
 ========
 Toggle Container
 ========
 */
+.header {
+  height: 5rem;
+  position: relative;
+}
 
+.toggle-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.light-icon,
+.dark-icon {
+  font-size: 2rem;
+  transition: var(--transition);
+}
+
+.light-icon {
+  color: var(--grey-900);
+}
+
+.dark-icon {
+  color: #F0F0F0;
+}
+
+.light-icon:hover,
+.dark-icon:hover {
+  color: var(--primary-500);
+}
 
 /* 
 ========
 Search Form
 ========
 */
+.form-container {
+  text-align: center;
+}
 
+h1 {
+  color: var(--primary-500);
+  font-size: 5rem;
+  font-weight: 500;
+  letter-spacing: var(--letterSpacing);
+}
+
+.search-form {
+  width: 70%;
+  max-width: 34rem;
+  height: 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin: 3rem auto 7rem;
+}
+
+.search-input[type=text] {
+  outline: none;
+  border: 1px solid var(--grey-300);
+  background-color: #F8FAFC;
+  padding: 0.5rem 1rem;
+  letter-spacing: var(--letterSpacing);
+}
+
+.btn-submit {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
 
 /* 
 ========
 Gallery
 ========
 */
+
+.gallery {
+  display: grid;
+  row-gap: 2rem;
+  margin-bottom: 10rem;
+}
+
+.gallery-item {
+  width: 100%;
+  height: 10rem;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
