@@ -36,7 +36,7 @@ function SearchForm() {
   };
 
   return (
-    <section className="form-container">
+    <section className="form-container container">
       <h1>Unsplash images</h1>
       <form className="search-form" onSubmit={handleSubmit}>
         <input

@@ -9,7 +9,7 @@ function Header() {
   };
 
   return (
-    <section className="header">
+    <section className="header container">
       <button className="toggle-container" onClick={handleToggle}>
         {isDarkMode ? (
           <IoIosMoon className="dark-icon" />

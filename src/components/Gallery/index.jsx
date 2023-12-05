@@ -15,7 +15,7 @@ function Gallery() {
       const response = await Axios.get(
         `/search/photos/?client_id=${import.meta.env.VITE_API_KEY}&query=${
           !searchTerm ? '""' : searchTerm
-        }`
+        }&per_page=14`
       );
       // console.log(response)
       const data = response.data.results;
@@ -36,7 +36,7 @@ function Gallery() {
   if (isError) return <>{error.message}</>;
 
   return (
-    <section className="gallery">
+    <section className="gallery container">
       {data.map((item) => {
         return <ImageItem key={item.id} item={item} />;
       })}

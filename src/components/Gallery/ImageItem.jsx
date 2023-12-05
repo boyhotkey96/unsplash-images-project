@@ -8,9 +8,8 @@ function ImageItem({ item }) {
   // console.log(item)
 
   return (
-    <div className="gallery-item">
+    <div className="gallery-image">
       <img
-        className="gallery-image"
         src={item.urls.regular}
         alt={item.alt_description}
       />

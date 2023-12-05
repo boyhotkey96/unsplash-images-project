@@ -8,7 +8,7 @@ AppProvider.propTypes = {
 const AppContext = createContext();
 
 // Dark Mode: check browser is dark
-const getDarkMode = () => {
+const checkDarkModeBrowser = () => {
   if (
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -19,10 +19,15 @@ const getDarkMode = () => {
   }
 };
 
+// Dark Mode: check local storage is dark
+const checkDarkModeStorage = () => {
+  return JSON.parse(localStorage.getItem("dark-mode"));
+};
+
 function AppProvider({ children }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    return JSON.parse(localStorage.getItem("dark-mode")) ?? getDarkMode;
+    return checkDarkModeStorage() ?? checkDarkModeBrowser();
   });
 
   const toggleDarkMode = () => {
