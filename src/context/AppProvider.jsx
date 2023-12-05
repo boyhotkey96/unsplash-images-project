@@ -22,7 +22,7 @@ const getDarkMode = () => {
 function AppProvider({ children }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    return JSON.parse(localStorage.getItem("dark-mode")) ?? getDarkMode();
+    return JSON.parse(localStorage.getItem("dark-mode")) ?? getDarkMode;
   });
 
   const toggleDarkMode = () => {
@@ -38,7 +38,7 @@ function AppProvider({ children }) {
     document.body.style.backgroundColor = "#f0f0f0";
   } */
   useEffect(() => {
-    document.body.classList.toggle("dark-mode");
+    document.body.classList.toggle("dark-mode", isDarkMode);
   }, [isDarkMode]);
 
   return (
