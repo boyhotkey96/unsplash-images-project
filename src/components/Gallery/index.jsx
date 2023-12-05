@@ -6,13 +6,14 @@ import ImageItem from "./ImageItem";
 
 function Gallery() {
   const { searchTerm } = useGlobalContext();
+  // console.log(import.meta.env.VITE_API_KEY)
 
   // Queries
   const { isPending, isError, data, error } = useQuery({
     queryKey: ["gallery", searchTerm],
     queryFn: async () => {
       const response = await Axios.get(
-        `/search/photos/?client_id=SZs5aeh5tS8c_wBxEmKZXGkqycsjKvjNoIFILdOvPpo&query=${
+        `/search/photos/?client_id=${import.meta.env.VITE_API_KEY}&query=${
           !searchTerm ? '""' : searchTerm
         }`
       );

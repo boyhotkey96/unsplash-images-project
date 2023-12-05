@@ -13,7 +13,9 @@ function SearchForm() {
   const mutation = useMutation({
     mutationFn: async (name) => {
       const response = await Axios.get(
-        `/search/photos/?client_id=SZs5aeh5tS8c_wBxEmKZXGkqycsjKvjNoIFILdOvPpo&query=${name}`
+        `/search/photos/?client_id=${
+          import.meta.env.VITE_API_KEY
+        }&query=${name}`
       );
       const data = await response.data;
       // console.log(data)

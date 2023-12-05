@@ -1,7 +1,8 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Gallery from "./components/Gallery";
+import Header from "./components/Header";
 import SearchForm from "./components/SearchForm";
-import Header from "./components/header";
 import "./index.css";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={true} />
       <main>
         <Header />
         <SearchForm />

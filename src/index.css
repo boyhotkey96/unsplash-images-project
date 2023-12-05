@@ -300,7 +300,7 @@ PROJECT CSS
 ========
 */
 body {
-  background-color: f0f0f0;
+  /* background-color: #f0f0f0; */
   transition: var(--transition);
 }
 
@@ -348,6 +348,10 @@ Toggle Container
 .light-icon:hover,
 .dark-icon:hover {
   color: var(--primary-500);
+}
+
+.dark-mode {
+  background-color: #333333;
 }
 
 /* 
