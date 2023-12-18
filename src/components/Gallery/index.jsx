@@ -22,6 +22,7 @@ function Gallery() {
 
       return data;
     },
+    // gcTime: 10 * 1000, // v4: cacheTime
   });
 
   if (isPending)

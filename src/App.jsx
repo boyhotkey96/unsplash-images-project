@@ -6,7 +6,14 @@ import SearchForm from "./components/SearchForm";
 import "./index.css";
 
 function App() {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        // staleTime: 10 * 1000,
+        // gcTime: 10 * 1000,
+      },
+    },
+  });
 
   return (
     <QueryClientProvider client={queryClient}>
