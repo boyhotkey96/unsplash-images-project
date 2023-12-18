@@ -27,7 +27,7 @@ function SearchForm() {
       // queryClient.setQueryData(['gallerys', mutation.data.results])
     },
   });
-  // console.log(mutation);
+  // console.log(mutation.status);
 
   const handleSubmit = (e) => {
     e.preventDefault();

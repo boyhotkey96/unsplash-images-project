@@ -9,7 +9,7 @@ function Gallery() {
   // console.log(import.meta.env.VITE_API_KEY)
 
   // Queries
-  const { isPending, isError, data, error } = useQuery({
+  const { isLoading, isError, data, error } = useQuery({
     queryKey: ["gallery", searchTerm],
     queryFn: async () => {
       const response = await Axios.get(
@@ -22,10 +22,13 @@ function Gallery() {
 
       return data;
     },
+    // placeholderData: keepPreviousData,
     // gcTime: 10 * 1000, // v4: cacheTime
   });
 
-  if (isPending)
+  console.log("isLoading:", isLoading, "data: ", data);
+
+  if (isLoading)
     return (
       <div
         style={{ display: "flex", justifyContent: "center", marginTop: "7rem" }}
